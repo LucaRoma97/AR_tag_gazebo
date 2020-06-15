@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <param name="robot_description" command="cat '$(find greenbot_description)/urdf/ar_2020.urdf'" />
+    
+    <arg name="x" default="3"/>
+    <arg name="y" default="3"/>
+    <arg name="z" default="0.1"/>
+    
+    <node name="greenbot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model greenbot -x $(arg x) -y $(arg y) -z $(arg z)" />
+          
+</launch>
